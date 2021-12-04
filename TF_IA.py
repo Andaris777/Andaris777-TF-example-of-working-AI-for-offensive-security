@@ -97,6 +97,8 @@ class Fake_environnement:
                       self.list_of_version[self.current_state[VERSION_INDEX]],
                       self.list_of_exploit[self.current_state[EXPLOIT_INDEX]],
                       self.list_of_target[self.current_state[TARGET_INDEX]],
+                      "||| payload chosen",
+                      payload,
                       env.background_color_monitor.background_ENDC)
                 return True
         print(env.background_color_monitor.background_FAIL + "[x] failure with : ",
@@ -105,6 +107,8 @@ class Fake_environnement:
               self.list_of_version[self.current_state[VERSION_INDEX]],
               self.list_of_exploit[self.current_state[EXPLOIT_INDEX]],
               self.list_of_target[self.current_state[TARGET_INDEX]],
+              "||| payload chosen",
+              payload,
               env.background_color_monitor.background_ENDC)
         return False
 
