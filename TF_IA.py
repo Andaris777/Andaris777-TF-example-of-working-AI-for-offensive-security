@@ -11,7 +11,13 @@ tf.get_logger().setLevel(logging.ERROR)
 
 #################################################################################################
 
-####################################                             ################################
+####################################SIMULATE METASPLOIT ENV STATE################################
+#       ______ ______
+#     _/      Y      \_
+#    // ~~ ~~ | ~~ ~  \\
+#   // ~ ~ ~~ | ~~~ ~~ \\
+#  //________.|.________\\  Original Unknown
+# `----------`-'----------' Diddled by David Issel
 ####################################SIMULATE METASPLOIT ENV STATE################################
 
 ##########################################     ##################################################
@@ -97,7 +103,7 @@ class Fake_environnement:
                       self.list_of_version[self.current_state[VERSION_INDEX]],
                       self.list_of_exploit[self.current_state[EXPLOIT_INDEX]],
                       self.list_of_target[self.current_state[TARGET_INDEX]],
-                      "||| payload chosen",
+                      "||| payload chosen : ",
                       payload,
                       env.background_color_monitor.background_ENDC)
                 return True
@@ -107,7 +113,7 @@ class Fake_environnement:
               self.list_of_version[self.current_state[VERSION_INDEX]],
               self.list_of_exploit[self.current_state[EXPLOIT_INDEX]],
               self.list_of_target[self.current_state[TARGET_INDEX]],
-              "||| payload chosen",
+              "||| payload chosen : ",
               payload,
               env.background_color_monitor.background_ENDC)
         return False
@@ -117,9 +123,9 @@ class Fake_environnement:
         self.number_of_sample += 1
         flag_success = self.simulate_a_try(payload)
         if flag_success:
-            reward = 200
+            reward = 1
         else:
-            reward = -200
+            reward = -1
         # if self.number_of_sample > number_of_test:
         done = True
         # else:
@@ -142,7 +148,13 @@ class Background_printer:
         self.background_UNDERLINE = '\033[4m'
 
 
-#######################################      #######################################################
+#######################################IA LAB#######################################################
+#    ,##.                   ,==.
+#  ,#    #.                 \ o ',
+# #        #     _     _     \    \
+# #        #    (_)   (_)    /    ;
+#  `#    #'                 /   .'
+#    `##'                   "=="
 #######################################IA LAB#######################################################
 class Local_brain:
 
@@ -251,7 +263,29 @@ class DQN:
             return np.argmax(self.model.prediction(np.atleast_2d(states))[0])
 
         # get the prob of all action and get the most efficient ###################
-        ###########################################################################
+        #            .  . '    .
+        #       '   .            . '            .                +
+        #               `                          '    . '
+        #         .                         ,'`.                         .
+        #    .                  .."    _.-;'    `.              .
+        #               _.-"`.##%"_.--" ,'        `.           "#"     ___,,od000
+        #            ,'"-_ _.-.--"\   ,'            `-_       '%#%',,/////00000HH
+        #          ,'     |_.'     )`/-     __..--""`-_`-._    J L/////00000HHHHM
+        #  . +   ,'   _.-"        / /   _-""           `-._`-_/___\///0000HHHHMMM
+        #      .'_.-""      '    :_/_.-'                 _,`-/__V__\0000HHHHHMMMM
+        #  . _-""                         .        '   _,////\  |  /000HHHHHMMMMM
+        # _-"   .       '  +  .              .        ,//////0\ | /00HHHHHHHMMMMM
+        #        `                                   ,//////000\|/00HHHHHHHMMMMMM
+        # .             '       .  ' .   .       '  ,//////00000|00HHHHHHHHMMMMMM
+        #      .             .    .    '           ,//////000000|00HHHHHHHMMMMMMM
+        #                   .  '      .       .   ,///////000000|0HHHHHHHHMMMMMMM
+        #   '             '        .    '         ///////000000000HHHHHHHHMMMMMMM
+        #                     +  .  . '    .     ,///////000000000HHHHHHHMMMMMMMM
+        #      '      .              '   .       ///////000000000HHHHHHHHMMMMMMMM
+        #    '                  . '              ///////000000000HHHHHHHHMMMMMMMM
+        #                            .   '      ,///////000000000HHHHHHHHMMMMMMMM
+        #        +         .        '   .    .  ////////000000000HHHHHHHHMMMMMMhs
+        #########################################################################
 
     def add_experience(self, exp):
         if len(self.experience['s']) >= self.max_experiences:
@@ -270,7 +304,18 @@ class DQN:
         return self.model.saver_weights(filepath)
 
 
-############################################                          #####################################################
+############################################SIMULATION OF EXPLOITATION#####################################################
+# .--.            .--.
+#  ( (`\\."--``--".//`) )
+#   '-.   __   __    .-'
+#    /   /__\ /__\   \
+#   |    \ 0/ \ 0/    |
+#   \     `/   \`     /
+#    `-.  /-"""-\  .-`
+#      /  '.___.'  \
+#      \     I     /
+#       `;--'`'--;`
+#         '.___.'   jgs
 ############################################SIMULATION OF EXPLOITATION#####################################################
 
 # TODO
@@ -402,10 +447,27 @@ if __name__ == '__main__':
         print(env.background_color_monitor.background_OKGREEN + "[*] Saving weight ...",
               env.background_color_monitor.background_ENDC)
         TrainNet.save_weights(data_saver_dir)
-        
         ############################TEST THE IA#############################################################################
-        ############################           #############################################################################
-        
+        #                .       .                   .       .      .     .      .
+        #           .    .         .    .            .     ______
+        #       .           .             .               ////////
+        #                 .    .   ________   .  .      /////////     .    .
+        #            .            |.____.  /\        ./////////    .
+        #     .                 .//      \/  |\     /////////
+        #        .       .    .//          \ |  \ /////////       .     .   .
+        #                     ||.    .    .| |  ///////// .     .
+        #      .    .         ||           | |//`,/////                .
+        #              .       \\        ./ //  /  \/   .
+        #   .                    \\.___./ //\` '   ,_\     .     .
+        #           .           .     \ //////\ , /   \                 .    .
+        #                        .    ///////// \|  '  |    .
+        #       .        .          ///////// .   \ _ /          .
+        #                         /////////                              .
+        #                  .   ./////////     .     .
+        #          .           --------   .                  ..             .
+        #   .               .        .         .                       .
+        #                         ________________________
+        # ____________------------                        -------------_________
         print(env.background_color_monitor.background_OKCYAN + "[*] End" + env.background_color_monitor.background_ENDC)
         print(env.background_color_monitor.background_BOLD + """
 ア マン カンノツ ウンデルスタンヅ ゼ アルツ ヘ イス スツヂイング イフ ヘ オンリ ロウク フオル ゼ エンヅ 
