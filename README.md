@@ -11,7 +11,7 @@
 This is a test programme whose goal is to create an IA which goal will be to chose a payload according to a state.
 To do so, we created a fake environment composed by two states and two possible actions (action related to the two names of payload provided). 
 You can find them in the hastable, at the beginning of the programme. 
-To run the programme, you may launch it threw a linux terminal like any python programme, or you might launch it through a python IDE like PyCharm.
+To run the programme, you may launch it through a linux terminal like any python programme, or you might launch it through a python IDE like PyCharm.
 
 
 ## Usefull Tools
