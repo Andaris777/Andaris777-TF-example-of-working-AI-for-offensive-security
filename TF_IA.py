@@ -36,7 +36,7 @@ success_table = {
     },
     '2': {
         'os': 'linux',
-        'service': 'ubuntu',
+        'service': 'http',
         'version': 'any',
         'exploit': 'linux/http/pulse_secure_cmd_exec',
         'target': 'linux64',
@@ -51,7 +51,7 @@ success_table = {
 class Fake_environnement:
     def __init__(self):
         self.list_of_os = ['windows', 'linux']  # short_list
-        self.list_of_service = ['microsoft-ds', 'ubuntu']
+        self.list_of_service = ['microsoft-ds', 'http']
         self.list_of_version = ['any']  # versions fake
         self.list_of_exploit = ['windows/smb/ms17_010_eternalblue',
                                 'linux/http/pulse_secure_cmd_exec', 'fuck']  # exploit short list
